@@ -1,5 +1,4 @@
-import logo from '../logo.svg'
-import Style from '../Componets/Header_Style.css'
+import Header_Style from '../Componets/Header_Style.css'
 import React, {useState} from 'react'
 
 function Plus_minus() {
