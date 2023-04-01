@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+body {
+  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Inter', sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
