@@ -4,7 +4,7 @@ import { AppContext } from "../Context/AppContext";
 
 const Footer = () => {
   const { page, handlePageChange, totalPages } = useContext(AppContext);
-
+  if (!totalPages) return null;
 
   return (
     <div className="w-full flex justify-center items-center border-2 fixed bottom-0 bg-white">
@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="flex gap-x-2">
           {page > 1 && (
             <button
-              className="rounded-md border-2 px-4 py-1  hover:bg-green-200 active:bg-green-500 shadow-md"
+              className="rounded-md border-2 border-x-green-900 px-4 py-1  hover:bg-green-200 active:bg-green-500 shadow-md"
               onClick={() => handlePageChange(page - 1)}
             >
               Previous
@@ -21,7 +21,7 @@ const Footer = () => {
 
           {page < totalPages && (
             <button
-              className="rounded-md border-2 px-4 py-1 hover:bg-green-200 active:bg-green-500 shadow-md"
+              className="rounded-md border-2  border-x-green-900 px-4 py-1 hover:bg-green-200 active:bg-green-500 shadow-md"
               onClick={() => handlePageChange(page + 1)}
             >
               Next
