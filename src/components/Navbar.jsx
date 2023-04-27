@@ -1,8 +1,12 @@
 import {FaShoppingCart} from "react-icons/fa"
 import { NavLink } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+
+  const {cart} = useSelector((state) => state);
+
   return (
     <div className="bg-slate-800 shadow-lg shadow-slate-400 mb-10 p-2">
       <div className="flex flex-row justify-around">
@@ -12,14 +16,22 @@ const Navbar = () => {
           </div>
         </NavLink>
 
-        <div className="flex flex-row gap-4 justify-center items-center">
+        <div className="flex flex-row gap-5 justify-center items-center">
           <NavLink to="/">
-            <p className="text-white">Home</p>
+            <p className="text-white hover:text-green-300">Home</p>
           </NavLink>
 
           <NavLink to="/cart">
-            <div>
-              <FaShoppingCart fontSize={34} color="white"/>
+            <div className="flex flex-col justify-center items-center">
+              {cart.length > 0 && (
+                <span
+                  className="bg-green-600 text-xs w-5 h-5 flex 
+                    justify-center items-center animate-bounce rounded-full text-white"
+                >
+                  {cart.length}
+                </span>
+              )}
+              <FaShoppingCart fontSize={34} color="white" />
             </div>
           </NavLink>
         </div>
